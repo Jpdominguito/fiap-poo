@@ -2,7 +2,7 @@ package br.com.fiapride.model;
 
 public class Faca {
 
-    // 🔐 Atributos privados (Proteção do Estado)
+    //  (Proteção do Estado)
     private int afiacao0a10;
     private boolean temPonta;
 
@@ -19,7 +19,7 @@ public class Faca {
         this.temPonta = possuiPonta;
     }
 
-    // 🔥 Método 1 - Afiar
+    //Afiar
     public void afiar(int nivelAdicionado) {
 
         if (nivelAdicionado <= 0) {
@@ -36,7 +36,7 @@ public class Faca {
         System.out.println("Faca afiada. Nível atual: " + this.afiacao0a10);
     }
 
-    // 🔥 Método 2 - Quebrar ponta
+    //Quebrar ponta
     public void quebrarPonta() {
 
         if (!this.temPonta) {
@@ -48,7 +48,7 @@ public class Faca {
         System.out.println("A ponta da faca foi quebrada.");
     }
 
-    // 🔍 Método auxiliar para exibir estado
+    // Método auxiliar para exibir estado
     public void exibirEstado() {
         System.out.println("Afiação: " + this.afiacao0a10 + " | Tem ponta? " + this.temPonta);
     }
