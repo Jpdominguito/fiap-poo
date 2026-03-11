@@ -3,8 +3,8 @@ package br.com.fiapride.model;
 public class Faca {
 
     //  (Proteção do Estado)
-    private int afiacao0a10;
-    private boolean temPonta;
+	private int afiacao0a10;
+	private boolean temPonta;
 
     // Construtor
     public Faca(int nivelInicialAfiacao, boolean possuiPonta) {
@@ -51,5 +51,25 @@ public class Faca {
     // Método auxiliar para exibir estado
     public void exibirEstado() {
         System.out.println("Afiação: " + this.afiacao0a10 + " | Tem ponta? " + this.temPonta);
+    }
+    public int getAfiacao0a10() {
+        return afiacao0a10;
+    }
+
+    public void setAfiacao0a10(int afiacao0a10) {
+
+        if (afiacao0a10 < 0 || afiacao0a10 > 10) {
+            System.out.println("Valor inválido para afiação.");
+            return;
+        }
+
+        this.afiacao0a10 = afiacao0a10;
+    }
+    public boolean isTemPonta() {
+        return temPonta;
+    }
+
+    public void setTemPonta(boolean temPonta) {
+        this.temPonta = temPonta;
     }
 }
