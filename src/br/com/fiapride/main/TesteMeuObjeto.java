@@ -1,33 +1,41 @@
 package br.com.fiapride.main;
 
-import br.com.fiapride.model.Faca;
+import br.com.fiapride.model.Bainha;
+import br.com.fiapride.model.FacaCozinha;
+import br.com.fiapride.model.FacaEsportiva;
 
 public class TesteMeuObjeto {
 
     public static void main(String[] args) {
 
-        System.out.println("--- Teste da Classe Faca ---");
+        System.out.println("--- Teste de Herança com Facas ---");
 
-        Faca faca1 = new Faca(8, true);
-        Faca faca2 = new Faca(3, false);
+        Bainha bainhaCouro = new Bainha("Couro");
+        Bainha bainhaPlastico = new Bainha("Plástico");
 
-        faca1.exibirEstado();
-        faca2.exibirEstado();
+        FacaCozinha facaChef = new FacaCozinha(8, true, bainhaCouro, "Aço Inox");
+        FacaEsportiva facaCamping = new FacaEsportiva(6, true, bainhaPlastico, true);
 
-        System.out.println("\nTestando métodos:");
+        facaChef.exibirEstado();
+        facaCamping.exibirEstado();
 
-        faca1.afiar(2);
-        faca2.quebrarPonta();
+        System.out.println("\nAtributos exclusivos:");
 
-        faca1.exibirEstado();
-        faca2.exibirEstado();
+        System.out.println("Faca de Cozinha - Tipo de lâmina: " + facaChef.getTipoLamina());
+        System.out.println("Faca Esportiva - Tem serra? " + facaCamping.isTemSerra());
+
+        System.out.println("\nTestando métodos herdados:");
+
+        facaChef.afiar(2);
+        facaCamping.quebrarPonta();
+
+        facaChef.exibirEstado();
+        facaCamping.exibirEstado();
 
         System.out.println("\n--- Testando proteção do setter ---");
 
-        System.out.println("Tentando definir afiação inválida (50)");
+        facaChef.setAfiacao0a10(50);
 
-        faca1.setAfiacao0a10(50);
-
-        faca1.exibirEstado();
+        facaChef.exibirEstado();
     }
 }
